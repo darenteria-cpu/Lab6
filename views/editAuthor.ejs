@@ -1,8 +1,8 @@
   <%- include('partials/head.ejs') %>
-  
+  <body> 
   <h1>Updating Author Data</h1>
-
-    <form method="POST" action="/author/edit">
+ 
+      <form method="POST" action="/author/edit">
 
       <input type="hidden" name="authorId" value="<%=authorInfo[0].authorId%>">
 
@@ -55,7 +55,7 @@
       Short Biography:
       <input type="text" name="bio" value="<%=authorInfo[0].biography%>">
       <br>
-
+        <button>Edit Author</button>
     </form>  
     <%- include('partials/footer.ejs') %> 
 </body>

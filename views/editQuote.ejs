@@ -10,10 +10,26 @@
       <input type="text" name="quote" value="<%=quoteInfo[0].quote%>">
       <br>
 
+      Author:
+      <select name="authorId">
+          <% for (let author of authors) { %>
+            <option value="<%=author.authorId%>"
+            <% if (author.authorId == quoteInfo[0].authorId) { %> selected <% } %>>
+            <%=author.firstName%> <%=author.lastName%>
+            </option>
+          <% } %>
+      </select>
+
       Category:
-      <input type="text" name="category" value="<%=quoteInfo[0].category%>">
-      <br>
-      
+      <select name="category">
+          <% for (let c of categories) { %>
+            <option value="<%=c.category%>"
+            <% if (c.category == quoteInfo[0].category) { %> selected <% } %>>
+            <%=c.category%>
+            </option>
+          <% } %>
+      </select>
+
       Total Likes:
       <input type="number" name="likes"  value="<%=quoteInfo[0].likes%>">
       <br>

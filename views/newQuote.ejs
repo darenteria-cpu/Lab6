@@ -6,15 +6,25 @@
 
 
     <form method="POST" action="/quote/new">
-      First Name:
-      <input type="text" name="fName"><br>
-      Last Name:
-      <input type="text" name="lName"><br>
+      Author: 
+      <select name="authorId">
+       <% for (author of authors) { %>
+         <option value="<%=author.authorId%>">
+            <%=author.firstName%>  <%=author.lastName%>
+         </option>
+        <%  }  %>
+     </select>
       Quote:
       <input type="text" name="quote">
       <br>
       Category:
-      <input type="text" name="category"><br>
+     <select name="category">
+       <% for (c of categories) { %>
+         <option value="<%=c.category%>">
+            <%=c.category%>  
+         </option>
+        <%  }  %>
+     </select>
       Total Likes:
       <input type="number" name="likes"><br>
       <button>Add Quote</button>
