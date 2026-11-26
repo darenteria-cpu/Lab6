@@ -1,0 +1,30 @@
+<%- include('partials/head.ejs') %>
+
+<body>
+
+ <h1>Adding a New Quote</h1>
+
+
+    <form method="POST" action="/quote/new">
+      First Name:
+      <input type="text" name="fName"><br>
+      Last Name:
+      <input type="text" name="lName"><br>
+      Quote:
+      <input type="text" name="quote">
+      <br>
+      Category:
+      <input type="text" name="category"><br>
+      Total Likes:
+      <input type="number" name="likes"><br>
+      <button>Add Quote</button>
+    </form>
+
+    <% if (typeof message != "undefined"){ %>
+  		 <h3><%=message%></h3>
+    <% } %>
+
+
+<%- include('partials/footer.ejs') %>
+</body>
+</html>
